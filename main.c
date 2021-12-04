@@ -112,11 +112,9 @@ int main() {
 
   thread** threads = (thread**)malloc(TOTAL*sizeof(thread*));
   int idx = 0;
-  for (int i = 0; i < /*MAX_THREADS;*/TOTAL; ++i) {
+  for (int i = 0; i < TOTAL; ++i) {
     thread* t = getThread(ts);
     run(t, fn, ts->stack);
     idx++;
   }
-  // collect threads
-  //wait(threads, TOTAL);
 }
