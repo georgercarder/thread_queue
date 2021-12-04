@@ -5,6 +5,8 @@
 //-lpthread
 #include <unistd.h>
 
+// TODO clean up memory
+
 typedef pthread_t thread;
 
 typedef struct {
