@@ -85,13 +85,14 @@ typedef struct {
 } threadPacket;
 
 void* fn(void* ptr) {
+  pthread_detach(pthread_self());
   // do stuff 
   // ...
   //
   threadPacket* tp = (threadPacket*)ptr;
 
   // sleep is simulating this function doing something
-  sleep(1); // 0.1 is possible
+  sleep(0.001); // 0.1 is possible
   // last step is put back into stack
   safeStackPush(tp->ss, tp->t);
 }
@@ -107,7 +108,7 @@ int main() {
   printf("hola\n");
 
   int MAX_THREADS = 1000;
-  int TOTAL = 10000;
+  int TOTAL = 1000000;
 
   threadStore* ts = newThreadStore(MAX_THREADS); 
 
