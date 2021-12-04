@@ -35,6 +35,7 @@ void safeStackPush(safeStack* ss, void* elt) {
     for (int i=0; i<ss->length; ++i) { // use copy
       newStack[i] = ss->stack[i]; 
     }
+    free(ss->stack);
     ss->stack = newStack;
     ss->allocated = 2*ss->allocated;
   }
