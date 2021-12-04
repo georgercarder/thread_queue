@@ -116,6 +116,7 @@ int main() {
   for (int i = 0; i < TOTAL; ++i) {
     thread* t = getThread(ts);
     run(t, fn, ts->stack);
+    printf("debug %d\n", idx);
     idx++;
   }
 }
