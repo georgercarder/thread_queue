@@ -46,7 +46,7 @@ void safeStackPush(safeStack* ss, void* elt) {
 void* safeStackPop(safeStack* ss) {
   void* ret;
   bool found = false;
-  while(found == false) {
+  while(!found) {
     pthread_mutex_lock(&ss->lock);
     if (ss->length > 0) {
       ret = ss->stack[ss->length-1];
