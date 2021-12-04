@@ -113,7 +113,6 @@ int main() {
 
   threadStore* ts = newThreadStore(MAX_THREADS); 
 
-  thread** threads = (thread**)malloc(TOTAL*sizeof(thread*));
   int idx = 0;
   for (int i = 0; i < TOTAL; ++i) {
     thread* t = getThread(ts);
